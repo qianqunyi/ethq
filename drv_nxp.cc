@@ -11,8 +11,8 @@
 
 #include "parser.h"
 
-static RegexParser mellanox_mlx5_core( 
-	{ "mlx5_core", "mlx4_en" },
-	RegexParser::total_generic(),
-	{ "^(rx|tx)(\\d+)_(?:0_)?(bytes|packets)$", { 1, 3, 2 } }
+static RegexParser nxp_daap2(
+	{ "fsl_dpaa2_eth" },
+	{ "^\\[hw\\] (rx|tx) (bytes|frames)$", { 1, 2 } },
+	RegexParser::queue_nomatch()
 );
